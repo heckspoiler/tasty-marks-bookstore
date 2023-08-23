@@ -1,10 +1,15 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./NavBar.module.css";
 
 const NavBar = () => {
+  const pathname = usePathname();
+  if (pathname.startsWith("/studio")) {
+    return null;
+  }
   return (
     <nav className={styles.NavBar}>
       <Link href="/">
@@ -39,6 +44,11 @@ const NavBar = () => {
           alt="Logo Tasty Marks"
         />
       </Link>
+      {process.env.NODE_ENV === "development" && (
+        <Link href="/studio">
+          <button>EDIT</button>
+        </Link>
+      )}
     </nav>
   );
 };
