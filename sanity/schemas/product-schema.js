@@ -11,6 +11,11 @@ export const product = defineType({
       type: "string",
     }),
     {
+      name: "author",
+      title: "Author",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
