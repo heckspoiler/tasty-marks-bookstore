@@ -5,6 +5,7 @@
       background-color: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
       padding: 10px;
+      padding-left: 20px;
       margin-top: calc(3rem + 5vw);
 
 }
@@ -15,5 +16,25 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
+}
+
+.navElement {
+      position: relative;
+      margin-left: 20px;
+}
+
+.navElement::before {
+      position: absolute;
+      content: url("../../public/alien-8bit-light.svg");
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      margin-left: -20px;
+      margin-top: 1px;
+      /* visibility: hidden; */
+}
+
+.beforeVisible {
+      visibility: visible;
 }
