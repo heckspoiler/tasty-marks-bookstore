@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.section-main {
+      margin-top: calc(2rem + 4vh);
+      min-height: 100vh;
+
+}

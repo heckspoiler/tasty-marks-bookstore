@@ -1,5 +1,7 @@
 .NavBar {
       width: 100%;
+      top: 0;
+      left: 0;
       height: calc(2rem + 4vh);
       background-color: transparent;
       display: flex;
@@ -23,10 +25,33 @@
 }
 
 .navElement {
+      position: relative;
       transition: transform 0.2s ease-in-out, font-weight 0.2s ease-in-out;
 }
 
 .navElement:hover {
-      transform: scale(1.1);
+      transform: scale(1.06);
       font-weight: 500;
+}
+
+.navElement::before {
+      height: 0%;
+      margin-left: calc(-1*(0.2rem + 0.5vw));
+      width: 0px;
+      content: "";
+      border-left: 0px solid black;
+      border-right: 0px solid black;
+      position: absolute;
+      transition: height 0.3s ease-in-out, width 0.3s ease-in-out, border 0.2s ease-in-out;
+      transition-delay: 50ms;
+      transition-property: width;
+
+
+}
+
+.navElement:hover::before {
+      height: 50%;
+      width: 4px;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
 }
