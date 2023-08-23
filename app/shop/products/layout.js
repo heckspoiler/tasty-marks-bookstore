@@ -1,4 +1,4 @@
-import ShopNav from "../components/ShopNav";
+import ShopNav from "../../components/ShopNav";
 
 export const metadata = {
   title: "Tasty Marks Bookstore Shop Page",
