@@ -16,10 +16,11 @@ export const revalidate = 60;
 export default async function Home() {
   const products = await getProductsAsync();
   return (
-    <main className={styles.mainSection}>
-      <section className="section-main">
-        <h1>Landing Page</h1>
-        <ul>
+    <main>
+      <section className={styles.mainSection}>
+        <h2>New Arrivals</h2>
+        <section className={styles.arrivalsContainer}>
+          {/* <ul>
           {products.map((product) => (
             <li key={product._id}>
               <h2>{product.name}</h2>
@@ -27,8 +28,11 @@ export default async function Home() {
               <p>CHF {product.price}</p>
             </li>
           ))}
-        </ul>
-        <ProductCard />
+        </ul> */}
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </section>
       </section>
     </main>
   );

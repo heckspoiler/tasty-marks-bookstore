@@ -1,1 +1,14 @@
-.mainSection {}
+.mainSection {
+      margin-top: 8rem;
+      width: 100vw;
+}
+
+.arrivalsContainer {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      height: calc(10rem + 22vw);
+      border-right: 1px solid black;
+      justify-content: stretch;
+      margin-top: calc(1rem + 1vw);
+}

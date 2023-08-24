@@ -1,18 +1,23 @@
 .productContainer {
-      border: 2px solid black;
+      border: 1px solid black;
       display: flex;
-      width: auto;
+      min-width: 20rem;
+      min-height: 20rem;
+      height: calc(10rem + 22vw);
+      width: 33.3333333333vw;
       gap: 40px;
       flex-direction: column;
-      max-width: calc(13rem + 10vw);
-      height: calc(13rem + 10vw);
       justify-content: flex-end;
       align-items: center;
       background-image: url("../../public/alien-8bit-light.svg");
       background-repeat: no-repeat;
       background-size: 95%;
       background-position: center;
-      transition: background-size 0.8s ease-in-out;
+      transition: background-size 0.6s ease-in-out;
+      overflow: hidden;
+      border-right: none;
+      flex: 1;
+      box-sizing: border-box;
 }
 
 .productContainer:hover {
@@ -25,6 +30,21 @@
       background-color: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(20px);
       padding: 10px;
+      height: 0vh;
+      opacity: 0;
+      transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      padding-left: 30px;
+}
+
+.isVisible {
+      height: calc(2rem + 5vw) !important;
+      opacity: 1;
+}
+
+.isNotVisible {
+      height: 0vh !important;
+      opacity: 0;
+
 }
 
 .buttonContainer {
@@ -34,12 +54,16 @@
       width: 100%;
 }
 
+.productPrice {
+      font-size: 0.8rem;
+}
+
 .moreInfoButton:hover {
       background-color: rgb(240, 201, 60);
       color: black;
 }
 
 .addCartButton:hover {
-      background-color: rgb(240, 60, 102);
+      background-color: rgb(60, 240, 189);
       color: black;
 }
