@@ -1,15 +1,16 @@
 "use client";
 import AddToCartButton from "./AddToCartButton";
 import MoreInfoButton from "./MoreInfoButton";
+import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import imageUrlBuilder from "@sanity/image-url";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = usePathname();
-
   const handleMouseOver = () => {
     if (router.pathname != "/shop/products") {
       setIsHovered(true);
@@ -30,22 +31,19 @@ const ProductCard = () => {
           className={styles.productContainer}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
+          style={{
+            backgroundImage: `url(${imageUrlBuilder(client)
+              .image(product.image)
+              .url()})`,
+          }}
         >
-          {/* <Image
-        alt="image"
-        src="/alien-8bit-light.svg"
-        width={200}
-        height={200}
-        className={styles.productImage}
-      /> */}
-
           <div
             className={`${styles.productInformationContainer} ${
               shouldShowInfo ? styles.isVisible : styles.isNotVisible
             }`}
           >
-            <h3>Product</h3>
-            <p className={styles.productPrice}>CHF 20</p>
+            <h3>{product.name}</h3>
+            <p className={styles.productPrice}>CHF {product.price}</p>
             <div className={styles.buttonContainer}>
               <MoreInfoButton />
               <AddToCartButton />

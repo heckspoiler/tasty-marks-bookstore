@@ -1,0 +1,57 @@
+.productContainer {
+
+      display: flex;
+      min-width: 20rem;
+      min-height: 20rem;
+      height: calc(8rem + 16vw);
+      width: calc(8rem + 16vw);
+      gap: 40px;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-image: url("../../public/alien-8bit-light.svg");
+      background-repeat: no-repeat;
+      background-size: 95%;
+      background-position: center;
+      transition: background-size 0.6s ease-in-out;
+      overflow: hidden;
+      flex: 1;
+      box-sizing: border-box;
+}
+
+.productContainer:hover {
+      background-size: 100%;
+}
+
+.productInformationContainer {
+
+      width: 100%;
+      background-color: white;
+      border: 1px solid black;
+      backdrop-filter: blur(20px);
+      padding: 10px;
+      height: 30%;
+      opacity: 1;
+      transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      padding-left: 30px;
+}
+
+.productInformationContainer h3 {
+      font-size: 0.7rem;
+}
+
+
+.buttonContainer {
+      display: flex;
+      justify-content: center;
+      gap: calc(0.2rem + 0.8vw);
+      width: 100%;
+}
+
+.productPrice {
+      font-size: 0.7rem;
+}
+
+.productInformationContainer button {
+      font-size: 0.6rem;
+}

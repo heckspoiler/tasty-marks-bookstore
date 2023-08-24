@@ -6,8 +6,7 @@ import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
 import ProductCard from "./components/ProductCard";
 
-const getProductsAsync = async () => {
-  console.log("getProductsAsync");
+export const getProductsAsync = async () => {
   return client.fetch(groq`*[_type == "product"]`);
 };
 
@@ -15,23 +14,16 @@ export const revalidate = 60;
 
 export default async function Home() {
   const products = await getProductsAsync();
+  console.log(products);
+
   return (
     <main>
       <section className={styles.mainSection}>
         <h2>New Arrivals</h2>
         <section className={styles.arrivalsContainer}>
-          {/* <ul>
-          {products.map((product) => (
-            <li key={product._id}>
-              <h2>{product.name}</h2>
-
-              <p>CHF {product.price}</p>
-            </li>
+          {products.slice(0, 3).map((product) => (
+            <ProductCard key={product.name} product={product} />
           ))}
-        </ul> */}
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
         </section>
       </section>
     </main>

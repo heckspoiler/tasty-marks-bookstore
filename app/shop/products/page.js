@@ -1,16 +1,26 @@
-"use client";
-
 import { useRouter } from "next/navigation";
-import ProductCard from "@/app/components/ProductCard";
+import ShopProductCard from "@/app/components/ShopProductCard";
+import { client } from "@/sanity/lib/client";
+import { groq } from "next-sanity";
+import styles from "./ProductsPage.module.css";
 
-const Products = () => {
-  const router = useRouter();
-
-  return (
-    <section>
-      <ProductCard />
-    </section>
-  );
+export const getProductsAsync = async () => {
+  return client.fetch(groq`*[_type == "product"]`);
 };
 
-export default Products;
+export default async function Products() {
+  const products = await getProductsAsync();
+
+  return (
+    <main>
+      <section className={styles.mainSection}>
+        <h2>Shop</h2>
+        <section className={styles.shopContainer}>
+          {products.slice(0, 3).map((product) => (
+            <ShopProductCard key={product.name} product={product} />
+          ))}
+        </section>
+      </section>
+    </main>
+  );
+}
