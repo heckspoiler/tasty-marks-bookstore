@@ -1,6 +1,9 @@
 import styles from "./Home.module.css";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import Image from "next/image";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 const getProductsAsync = async () => {
   console.log("getProductsAsync");
@@ -19,6 +22,8 @@ export default async function Home() {
           {products.map((product) => (
             <li key={product._id}>
               <h2>{product.name}</h2>
+
+              <p>CHF {product.price}</p>
             </li>
           ))}
         </ul>
