@@ -4,6 +4,7 @@ import { groq } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
+import ProductCard from "./components/ProductCard";
 
 const getProductsAsync = async () => {
   console.log("getProductsAsync");
@@ -27,6 +28,7 @@ export default async function Home() {
             </li>
           ))}
         </ul>
+        <ProductCard />
       </section>
     </main>
   );

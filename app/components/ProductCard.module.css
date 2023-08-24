@@ -1,0 +1,45 @@
+.productContainer {
+      border: 2px solid black;
+      display: flex;
+      width: auto;
+      gap: 40px;
+      flex-direction: column;
+      max-width: calc(13rem + 10vw);
+      height: calc(13rem + 10vw);
+      justify-content: flex-end;
+      align-items: center;
+      background-image: url("../../public/alien-8bit-light.svg");
+      background-repeat: no-repeat;
+      background-size: 95%;
+      background-position: center;
+      transition: background-size 0.8s ease-in-out;
+}
+
+.productContainer:hover {
+      background-size: 100%;
+}
+
+.productInformationContainer {
+
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      padding: 10px;
+}
+
+.buttonContainer {
+      display: flex;
+      justify-content: center;
+      gap: calc(0.2rem + 0.8vw);
+      width: 100%;
+}
+
+.moreInfoButton:hover {
+      background-color: rgb(240, 201, 60);
+      color: black;
+}
+
+.addCartButton:hover {
+      background-color: rgb(240, 60, 102);
+      color: black;
+}
