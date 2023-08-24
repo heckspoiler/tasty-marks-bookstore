@@ -15,7 +15,13 @@ export default async function Home() {
     <main className={styles.mainSection}>
       <section className="section-main">
         <h1>Landing Page</h1>
-        <h2>{products[0].name}</h2>
+        <ul>
+          {products.map((product) => (
+            <li key={product._id}>
+              <h2>{product.name}</h2>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );
