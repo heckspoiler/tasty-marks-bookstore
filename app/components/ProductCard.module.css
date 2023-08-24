@@ -37,7 +37,7 @@
 }
 
 .isVisible {
-      height: calc(2rem + 5vw) !important;
+      height: 30% !important;
       opacity: 1;
 }
 
@@ -56,14 +56,4 @@
 
 .productPrice {
       font-size: 0.8rem;
-}
-
-.moreInfoButton:hover {
-      background-color: rgb(240, 201, 60);
-      color: black;
-}
-
-.addCartButton:hover {
-      background-color: rgb(60, 240, 189);
-      color: black;
 }

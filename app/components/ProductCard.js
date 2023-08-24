@@ -1,5 +1,6 @@
 "use client";
-import Image from "next/image";
+import AddToCartButton from "./AddToCartButton";
+import MoreInfoButton from "./MoreInfoButton";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { useState, useEffect } from "react";
@@ -14,17 +15,10 @@ const ProductCard = () => {
       setIsHovered(true);
     }
   };
-
   const handleMouseOut = () => {
     if (router.pathname != "/shop/products") {
       setIsHovered(false);
     }
-  };
-
-  const addToCart = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log("Hurensohn");
   };
 
   const shouldShowInfo = router.pathname === "/shop/products" || isHovered;
@@ -53,10 +47,8 @@ const ProductCard = () => {
             <h3>Product</h3>
             <p className={styles.productPrice}>CHF 20</p>
             <div className={styles.buttonContainer}>
-              <button className={styles.moreInfoButton}>More Info</button>
-              <button className={styles.addCartButton} onClick={addToCart}>
-                Add to Cart
-              </button>
+              <MoreInfoButton />
+              <AddToCartButton />
             </div>
           </div>
         </div>
