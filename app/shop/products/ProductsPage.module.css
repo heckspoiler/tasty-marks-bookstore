@@ -6,7 +6,9 @@
 .shopContainer {
       height: 100%;
       width: 80%;
-      display: flex;
+      display: grid;
       margin: auto;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      row-gap: 50px;
 }

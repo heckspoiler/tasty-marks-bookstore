@@ -16,7 +16,7 @@ export default async function Products() {
       <section className={styles.mainSection}>
         <h2>Shop</h2>
         <section className={styles.shopContainer}>
-          {products.slice(0, 3).map((product) => (
+          {products.map((product) => (
             <ShopProductCard key={product.name} product={product} />
           ))}
         </section>
