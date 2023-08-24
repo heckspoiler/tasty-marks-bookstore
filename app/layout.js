@@ -1,11 +1,14 @@
-import styles from "./globals.css";
-import { Inter } from "next/font/google";
-import { Poppins } from "next/font/google";
+import "./globals.css";
+import { DM_Sans } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
+const spacegrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+const dmsans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
   title: "Tasty Marks Bookstore",
@@ -15,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={spacegrotesk.className}>
         <NavBar />
         <section className="section-main">{children}</section>
         <Footer />
