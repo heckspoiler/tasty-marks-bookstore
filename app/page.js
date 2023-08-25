@@ -8,12 +8,8 @@ export const getProductsAsync = async () => {
   return client.fetch(groq`*[_type == "product"]`);
 };
 
-export const revalidate = 60;
-
 export default async function Home() {
   const products = await getProductsAsync();
-  console.log(products);
-
   return (
     <main>
       <section className={styles.mainSection}>

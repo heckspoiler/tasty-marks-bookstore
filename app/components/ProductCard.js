@@ -22,8 +22,7 @@ const ProductCard = ({ product }) => {
     }
   };
 
-  console.log("Product:", product);
-  console.log("Product Slug:", product.slug);
+  console.log("Product Slug:", product.slug.current);
 
   const shouldShowInfo = router.pathname === "/shop/products" || isHovered;
 
@@ -59,3 +58,11 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
+export async function getStaticPaths() {
+  // Return a list of possible value for id
+}
+
+export async function getStaticProps({ params }) {
+  // Fetch necessary data for the blog post using params.id
+}
