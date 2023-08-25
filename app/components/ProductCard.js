@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <Link href={`/shop/products/${product.slug.current}`}>
+      <Link href={`shop/products/${product.slug.current}`}>
         <div
           className={styles.productContainer}
           onMouseOver={handleMouseOver}
