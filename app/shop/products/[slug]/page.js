@@ -9,11 +9,11 @@ export const getProductsAsync = async () => {
 };
 
 async function ProductDetailsPage() {
-  const products = await getProductsAsync();
+  const product = await getProductsAsync();
 
   return (
     <div>
-      <ProductDetails products={products} />
+      <ProductDetails product={product} />
     </div>
   );
 }

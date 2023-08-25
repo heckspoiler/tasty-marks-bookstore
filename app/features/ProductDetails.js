@@ -1,9 +1,9 @@
 import React from "react";
 
-export const ProductDetails = ({ products }) => {
+export const ProductDetails = ({ product }) => {
   return (
     <div>
-      <div key={products._id}>{products.name}</div>
+      <div key={product._id}>{product.name}</div>
     </div>
   );
 };
