@@ -3,8 +3,8 @@
       display: flex;
       min-width: 20rem;
       min-height: 20rem;
-      height: calc(8rem + 16vw);
-      width: calc(8rem + 16vw);
+      height: calc(7rem + 16vw);
+      width: calc(7rem + 16vw);
       gap: 40px;
       flex-direction: column;
       justify-content: flex-end;

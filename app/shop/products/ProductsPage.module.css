@@ -5,7 +5,7 @@
 
 .shopContainer {
       height: 100%;
-      width: 80%;
+      width: 78%;
       display: grid;
       margin: auto;
       grid-template-columns: 1fr 1fr 1fr;
