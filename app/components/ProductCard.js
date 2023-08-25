@@ -22,11 +22,14 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  console.log("Product:", product);
+  console.log("Product Slug:", product.slug);
+
   const shouldShowInfo = router.pathname === "/shop/products" || isHovered;
 
   return (
     <>
-      <Link href="/">
+      <Link href={`/shop/products/${product.slug.current}`}>
         <div
           className={styles.productContainer}
           onMouseOver={handleMouseOver}
